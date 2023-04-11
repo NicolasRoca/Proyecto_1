@@ -10,6 +10,10 @@ body {
     padding: 10px;
 }
 
+/* #titulo h4{
+    text-align: right;
+} */
+
 #inse{
     width: 130px;
     text-align: right;
@@ -36,6 +40,7 @@ body {
     transition: background-color 0.3s ease;
 }
 
+
 #top-bar {
     background-color: #222;
     color: #fff;
@@ -52,6 +57,16 @@ body {
 #top-bar a:hover {
     text-decoration: underline;
 }
+
+/* .mainscreen {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #DFDBE5;
+    background-image: url("https://wallpaperaccess.com/full/3063067.png");
+    color: #fff;
+} */
 
 #product-list {
     display: flex;
