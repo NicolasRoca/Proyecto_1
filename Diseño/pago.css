@@ -59,8 +59,8 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
-    background-color: #DFDBE5;
-    background-image: url("https://wallpaperaccess.com/full/3063067.png");
+    background-color: #fff;
+    /* background-image: url("https://wallpaperaccess.com/full/3063067.png"); */
     color: #fff;
 }
 
