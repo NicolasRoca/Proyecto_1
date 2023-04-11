@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Diseño/pago.css">
     <title>Pago</title>
 </head>
+
 <body>
     <div id="titulo">
         <h4>ENVIOS GRATIS A TODOS LADOS</h4>
         <div id="inse">
             <a href="login.html">Iniciar Sesion</a>
         </div>
-        
+
     </div>
 
     <div id="top-bar">
@@ -23,44 +26,41 @@
     </div>
 
     <div class="mainscreen">
-        <!-- <img src="https://image.freepik.com/free-vector/purple-background-with-neon-frame_52683-34124.jpg"  class="bgimg " alt="">--> 
-          <div class="card">
+        <!-- <img src="https://image.freepik.com/free-vector/purple-background-with-neon-frame_52683-34124.jpg"  class="bgimg " alt="">-->
+        <div class="card">
             <div class="leftside">
-              <img
-                src="../Img/Img_compra/img_compra.PNG"
-                class="product"
-                alt="Shoes"
-              />
+                <img src="../Img/Img_compra/img_compra.PNG" class="product" alt="Shoes" />
             </div>
             <div class="rightside">
-              <form action="">
-                <h1>CheckOut</h1>
-                <h2>Payment Information</h2>
-                <p>Cardholder Name</p>
-                <input type="text" class="inputbox" name="name" required />
-                <p>Card Number</p>
-                <input type="number" class="inputbox" name="card_number" id="card_number" required />
-    
-                <p>Card Type</p>
-                <select class="inputbox" name="card_type" id="card_type" required>
-                  <option value="">--Select a Card Type--</option>
-                  <option value="Visa">Visa</option>
-                  <option value="RuPay">RuPay</option>
-                  <option value="MasterCard">MasterCard</option>
-                </select>
-    <div class="expcvv">
-    
-                <p class="expcvv_text">Expiry</p>
-                <input type="date" class="inputbox" name="exp_date" id="exp_date" required />
-    
-                <p class="expcvv_text2">CVV</p>
-                <input type="password" class="inputbox" name="cvv" id="cvv" required />
+                <form action="">
+                    <h1>CheckOut</h1>
+                    <h2>Payment Information</h2>
+                    <p>Cardholder Name</p>
+                    <input type="text" class="inputbox" name="name" required />
+                    <p>Card Number</p>
+                    <input type="number" class="inputbox" name="card_number" id="card_number" required />
+
+                    <p>Card Type</p>
+                    <select class="inputbox" name="card_type" id="card_type" required>
+                        <option value="">--Select a Card Type--</option>
+                        <option value="Visa">Visa</option>
+                        <option value="RuPay">RuPay</option>
+                        <option value="MasterCard">MasterCard</option>
+                    </select>
+                    <div class="expcvv">
+
+                        <p class="expcvv_text">Expiry</p>
+                        <input type="date" class="inputbox" name="exp_date" id="exp_date" required />
+
+                        <p class="expcvv_text2">CVV</p>
+                        <input type="password" class="inputbox" name="cvv" id="cvv" required />
+                    </div>
+                    <p></p>
+                    <a class="compra" href="#">Comprar</a>
+                </form>
             </div>
-                <p></p>
-                <a href="#">Comprar</a>
-              </form>
-            </div>
-          </div>
         </div>
+    </div>
 </body>
+
 </html>
