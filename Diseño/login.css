@@ -1,6 +1,36 @@
 body {
-  background-color: #8A2BE2;
-  font-family: "Roboto", sans-serif;
+  background-color: #fff;
+  font-family: 'Roboto', sans-serif !important;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#titulo {
+  background-color: #222;
+  color: #fff;
+  padding: 10px;
+}
+
+#top-bar {
+  background-color: #222;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+#top-bar a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+#top-bar a:hover {
+  text-decoration: underline;
+}
+
+.login-form h2{
+  color: #fff;
 }
 
 .login-page {
@@ -12,7 +42,7 @@ body {
 .form {
   position: relative;
   z-index: 1;
-  background: #FFFFFF;
+  background: #222;
   max-width: 360px;
   margin: 0 auto 100px;
   padding: 45px;
