@@ -93,6 +93,33 @@ body {
     padding: 1rem 2rem 3rem 3rem;
 }
 
+.rightside h1{
+    text-align: center;
+}
+
+.vol_menu{
+    color: #fff;
+    text-decoration: none;
+    margin: 40px;
+    display: block;
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.vol_menu a:hover {
+    text-decoration: underline;
+    background-color: #3e8e41;
+}
+
+.rightside img{
+    width: 300px;
+    margin: 10px;
+}
+
 p {
     display: block;
     font-size: 1.1rem;
