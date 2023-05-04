@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Diseño/pago.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <script src="../Js/bootstrap.bundle.min.js"></script>
+    <script src="../Js/validar_pago.js"></script>
     <title>Pago</title>
 </head>
 
@@ -38,8 +41,9 @@
                     <h1>Verificar</h1>
                     <h2>Información del pago</h2>
                     <p>Nombre del titular de la tarjeta</p>
-                    <input type="text" class="inputbox" name="name" required />
+                    <input type="text" id="nom_tarjeta" onblur="validar_nombre_tarjeta()" class="inputbox" name="name" required />
                     <p>Número de tarjeta</p>
+                    <small id="help_num_tarjeta" class="form-text text-danger"></small>
                     <input type="number" class="inputbox" name="card_number" id="card_number" required />
 
                     <p>Tipo de tarjeta</p>
