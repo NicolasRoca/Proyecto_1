@@ -2,65 +2,91 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../Diseño/login.css">
-  <script src="../Js/login.js"></script>
-  <title>Login</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Diseño/Agregar_producto.css">
+    <title>Prueba</title>
 </head>
 
 <body>
-  <div id="titulo">
-    <h4>ENVIOS GRATIS A TODOS LADOS</h4>
-  </div>
-
-  <div class="mainscreen">
-    <div id="top-bar">
-      <a href="camisetas.html">Camisetas</a>
-      <a href="chutedores.html">Chuteadores</a>
-      <a href="guantes.html">Guantes</a>
-      <a href="canilleras.html">Canilleras</a>
-    </div>
-  </div>
-    <!-- ... -->
-
-    <div class="login-page">
-        <div class="form">
-            <form class="login-form" onsubmit="return validarYRedirigir();">
-                <h2>Inicia Sesion</h2>
-                <input type="text" placeholder="Nombre de usuario" id="nom_usuario" />
-                <input type="password" placeholder="Contraseña" id="contra" />
-                <div class="boton">
-                    <button type="submit">Iniciar Sesion</button>
-                    <br>
-                    <a href="index.html">Volver al menu</a>
-                    <br>
-                    <div id="alertaError" class="alert" style="display:none;">
-                        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-                        <strong>Error:</strong> <span id="mensajeError"></span>
-                      </div>                      
-                </div>
-            </form>
+    <div id="titulo">
+        <h4>ENVIOS GRATIS A TODOS LADOS</h4>
+        <div id="inse">
+            <a href="index.html">Cerrar Sesion</a>
         </div>
-    </div>
-    </div>
-<!--     <script>
-        function validarYRedirigir() {
-            // Validación de campos
-            var nom_usuario = document.getElementById("nom_usuario").value.trim();
-            var contra = document.getElementById("contra").value.trim();
 
-            if (nom_usuario === "" || contra === "") {
-                alert("Por favor, complete todos los campos.");
-                return false;
+    </div>
+
+    <div id="top-bar">
+        <a href="#">Camisetas</a>
+        <a href="#">Chuteadores</a>
+        <a href="#">Guantes</a>
+        <a href="#">Canilleras</a>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="contorno">
+        <form id="formulario">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required><br><br>
+            <label for="precio">Precio:</label>
+            <input type="number" id="precio" name="precio" min="0" step="0.01" required><br><br>
+            <label for="tipo">Tipo:</label>
+            <select id="tipo" name="tipo" required>
+                <option value="" disabled selected>Seleccione el tipo de producto</option>
+                <option value="camisetas">Camisetas</option>
+                <option value="chuteadores">Chuteadores</option>
+                <option value="guantes">Guantes</option>
+                <option value="canilleras">Canilleras</option>
+            </select><br><br>
+            <div class="boton">
+                <button type="submit">Agregar</button>
+                <br><br>
+                <a href="inciado_sesion_cliente.html" class="volver">Volver</a>
+            </div>
+            
+        </form>
+        <div class="aprobado" id="mensajeAprobado">Producto agregado correctamente</div>
+    </div>
+
+    <script>
+        const formulario = document.getElementById("formulario");
+        const mensajeAprobado = document.getElementById("mensajeAprobado");
+
+        formulario.addEventListener("submit", (e) => {
+            e.preventDefault();
+            let camposValidos = true;
+
+            const inputs = formulario.querySelectorAll("input, select");
+
+            inputs.forEach((input) => {
+                const mensajeError = input.parentNode.querySelector(".error");
+
+                if (mensajeError) {
+                    mensajeError.remove();
+                }
+
+                if (!input.checkValidity()) {
+                    camposValidos = false;
+                    const error = document.createElement("span");
+                    error.className = "error";
+                    error.textContent = input.validationMessage;
+                    input.parentNode.appendChild(error);
+                }
+            });
+
+            if (camposValidos) {
+                mensajeAprobado.style.display = "block";
+            } else {
+                mensajeAprobado.style.display = "none";
             }
-
-            // Si la validación es exitosa, abre una nueva ventana
-            window.location.href = "inciado_sesion_cliente.html";
-            return false; // Evita que el formulario se envíe
-        }
-    </script> -->
+        });
+    </script>
 </body>
 
 </html>

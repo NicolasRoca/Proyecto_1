@@ -134,3 +134,19 @@ button[type=submit]:hover {
     text-decoration: none;
     transition: background-color 0.3s ease;
 }
+
+---------------------------------------------------------
+
+.error {
+    color: red;
+    font-weight: 700;
+    display: block;
+    margin-top: 5px;
+  }
+  .aprobado {
+    color: green;
+    font-weight: 700;
+    display: none;
+    margin-top: 15px;
+    text-align: center;
+  }

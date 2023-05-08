@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Diseño/Agregar_producto.css">
-    <title>Agregar Producto</title>
+    <title>Agregar producto</title>
 </head>
+
 <body>
     <div id="titulo">
         <h4>ENVIOS GRATIS A TODOS LADOS</h4>
         <div id="inse">
             <a href="index.html">Cerrar Sesion</a>
         </div>
-        
+
     </div>
 
     <div id="top-bar">
@@ -28,8 +30,8 @@
     <br>
     <br>
     <br>
-    <div class="contorno"> 
-        <form action="agregar_producto.php" method="post">
+    <div class="contorno">
+        <form id="formulario">
             <label for="nombre">Nombre:</label>
             <input type="text" id="nombre" name="nombre" required><br><br>
             <label for="precio">Precio:</label>
@@ -43,12 +45,48 @@
                 <option value="canilleras">Canilleras</option>
             </select><br><br>
             <div class="boton">
-                <button class="compra" type="submit">Agregar Producto</button>
+                <button type="submit">Agregar</button>
                 <br><br>
                 <a href="inciado_sesion_cliente.html" class="volver">Volver</a>
             </div>
+            
         </form>
+        <div class="aprobado" id="mensajeAprobado">Producto agregado correctamente</div>
     </div>
 
+    <script>
+        const formulario = document.getElementById("formulario");
+        const mensajeAprobado = document.getElementById("mensajeAprobado");
+
+        formulario.addEventListener("submit", (e) => {
+            e.preventDefault();
+            let camposValidos = true;
+
+            const inputs = formulario.querySelectorAll("input, select");
+
+            inputs.forEach((input) => {
+                const mensajeError = input.parentNode.querySelector(".error");
+
+                if (mensajeError) {
+                    mensajeError.remove();
+                }
+
+                if (!input.checkValidity()) {
+                    camposValidos = false;
+                    const error = document.createElement("span");
+                    error.className = "error";
+                    error.textContent = input.validationMessage;
+                    input.parentNode.appendChild(error);
+                }
+            });
+
+            if (camposValidos) {
+                mensajeAprobado.style.display = "block";
+            } else {
+                mensajeAprobado.style.display = "none";
+            }
+        });
+    </script>
 </body>
+
 </html>
