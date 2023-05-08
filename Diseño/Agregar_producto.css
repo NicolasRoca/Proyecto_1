@@ -4,7 +4,7 @@ body {
     padding: 0;
 }
 
-#titulo{
+#titulo {
     background-color: #222;
     color: #fff;
     padding: 10px;
@@ -14,12 +14,12 @@ body {
     text-align: right;
 } */
 
-#inse{
+#inse {
     width: 130px;
     text-align: right;
 }
 
-#titulo a{
+#titulo a {
     color: #fff;
     text-decoration: none;
     margin-right: 10px;
@@ -40,7 +40,7 @@ body {
     transition: background-color 0.3s ease;
 }
 
-h2{
+h2 {
     text-align: center;
     color: #222;
 }
@@ -62,79 +62,75 @@ h2{
     text-decoration: underline;
 }
 
-/* .mainscreen {
-    min-height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    background-color: #DFDBE5;
-    background-image: url("https://wallpaperaccess.com/full/3063067.png");
-    color: #fff;
-} */
 
-#product-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 20px;
+h1 {
+    text-align: center;
 }
 
-.product-item {
+.contorno {
+    background-color: #222;
+    width: 500px;
+    padding: 1% 0% 5%;
+    margin: auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+input[type=text],
+input[type=number],
+select {
     width: 300px;
-    margin-bottom: 20px;
-    background-color: #f5f5f5;
-    padding: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
 }
 
-.product-item img {
-    width: 100%;
-    height: auto;
-}
-
-.product-item p {
-    margin: 10px 0;
-}
-
-.product-item a {
-    display: block;
-    background-color: #4CAF50;
+label {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: center;
     color: #fff;
+}
+
+button[type=submit] {
+    background-color: #4CAF50;
+    color: white;
     padding: 10px;
+    margin: 20px 0;
+    border: none;
+    cursor: pointer;
     text-align: center;
     text-decoration: none;
-    transition: background-color 0.3s ease;
 }
 
-.product-item a:hover {
-    background-color: #3e8e41;
+button[type=submit]:hover {
+    background-color: #45a049;
 }
 
-
-.contact-info {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    margin-right: 20px;
-}
-
-.contact-info p {
-    margin: 5px 0;
-}
-
-.ag_produc {
-    display: block;
-    background-color: #4CAF50;
+.boton a {
     color: #fff;
-    padding: 10px;
-    text-align: center;
     text-decoration: none;
-    transition: background-color 0.3s ease;
-  }
-  
-  .ag_produc:hover {
+    margin-right: 10px;
+}
+
+.boton a:hover {
     text-decoration: underline;
     background-color: #3e8e41;
-  }
-  
+}
+
+.boton a {
+    display: block;
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}

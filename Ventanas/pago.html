@@ -37,11 +37,11 @@
                 <img src="../Img/Img_compra/img_compra.PNG" class="product" alt="Shoes" />
             </div>
             <div class="rightside">
-                <form action="">
+                <form id="compra">
                     <h1>Verificar</h1>
                     <h2>Información del pago</h2>
                     <p>Nombre del titular de la tarjeta</p>
-                    <input type="text" id="nom_tarjeta" onblur="validar_nombre_tarjeta()" class="inputbox" name="name" required />
+                    <input type="text" id="nom_tarjeta" class="inputbox" name="name" required />
                     <p>Número de tarjeta</p>
                     <small id="help_num_tarjeta" class="form-text text-danger"></small>
                     <input type="number" class="inputbox" name="card_number" id="card_number" required />
@@ -53,8 +53,8 @@
                         <option value="RuPay">RuPay</option>
                         <option value="MasterCard">MasterCard</option>
                     </select>
-                    <div class="expcvv">
 
+                    <div class="expcvv">
                         <p class="expcvv_text">Expiración</p>
                         <input type="date" class="inputbox" name="exp_date" id="exp_date" required />
 
@@ -62,8 +62,10 @@
                         <input type="password" class="inputbox" name="cvv" id="cvv" required />
                     </div>
                     <p></p>
-                    <a class="compra" href="pago_realizada.html">Comprar</a>
+
+                    <button class="compra" type="submit">Comprar</button>
                 </form>
+
             </div>
         </div>
     </div>

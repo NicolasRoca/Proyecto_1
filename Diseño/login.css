@@ -83,3 +83,65 @@ body {
   text-decoration: none;
   transition: background-color 0.3s ease;
 }
+
+---------------------------
+
+.boton button{
+  color: #fff;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.boton button:hover {
+  text-decoration: underline;
+  background-color: #3e8e41;
+}
+
+.boton button {
+  display: block;
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+----------------------------------------------
+
+.warning{
+  width: 200px;
+  text-align: center;
+  margin: auto;
+  color: #3e8e41;
+  padding-top: 20px;
+}
+
+
+--------------------------------------------------
+
+
+  .alert {
+    padding: 20px;
+    background-color: #f44336; /* Red */
+    color: white;
+    margin-bottom: 15px;
+  }
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .closebtn:hover {
+    color: black;
+  }
+
+  #mensajeError{
+    color: red;
+  }
+

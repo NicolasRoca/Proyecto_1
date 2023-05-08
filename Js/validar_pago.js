@@ -1,21 +1,21 @@
-/* document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("compra").addEventListener('submit', validar_compra); 
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("compra").addEventListener('submit', function(evento) {
+      evento.preventDefault();
+      validar_nom_tarjeta();
+      redireccionar();
+    });
   });
-
-function validar_nom_tarjeta(evento){
-    evento.preventDefault();
-    var nombre_tarjeta=document.getElementById('nom_tarjeta').ariaValueMax;
-    if(nombre_tarjeta.length==0){
-        alert('Debe ingresar un nombre para la tarjeta');
-        return;
+  
+  function validar_nom_tarjeta() {
+    var nombre_tarjeta = document.getElementById('nom_tarjeta').value;
+    if (nombre_tarjeta.length == 0) {
+      alert('Debe ingresar un nombre para la tarjeta');
+      return false;
     }
-} */
-
-function validar_nombre_tarjeta(){
-    console.log("Pon un nombre")
-    let nombre_tarjeta=document.getElementById("nom_tarjeta").value
-    console.log(nombre_tarjeta.length)
-    if(nombre_tarjeta==0){
-        document.getElementById("help_num_tarjeta").innerHTML="DEBE INGRESAR ALGO"
-    }
-}
+    return true;
+  } 
+  
+  function redireccionar() {
+    window.location.href = "pago_realizada.html";
+  }
+  
