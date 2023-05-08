@@ -6,16 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Diseño/index.css">
-    <script src="https://unpkg.com/sweetalert@2.1.2/dist/sweetalert.min.js"></script>
     <script src="../Js/Api.js"></script>
-
-    <title>Inicio</title>
+    <title>Camisetas</title>
 </head>
 
 <body>
     <div id="titulo">
         <h4>ENVIOS GRATIS A TODOS LADOS</h4>
-
         <div id="user-image">
             <img id="image" src="" alt="Random user image">
         </div>
@@ -23,7 +20,6 @@
         <div id="inse">
             <a href="index.html">Cerrar Sesion</a>
         </div>
-
     </div>
 
     <div id="top-bar">
@@ -33,65 +29,34 @@
         <a href="canilleras_inse.html">Canilleras</a>
     </div>
 
-    <a href="agregar_producto.html" class="ag_produc">Agregar producto</a>
-
-    <h2>Productos destacados</h2>
-    <br>
     <div id="product-list">
         <div class="product-item">
             <img src="../Img/Camisetas/camiPSG.png">
             <p>Camiseta del PSG</p>
             <p>$39.990</p>
             <a href="Pago_ini_sesion.html">COMPRAR</a>
-            <br>
-            <a href="#" id="eliminarProducto" class="eliminar-producto">Eliminar producto</a>
-
         </div>
 
         <div class="product-item">
-            <img src="../Img/Chuteadores/chuteadores.png">
-            <p>Chuteadores Adidas Predator</p>
+            <img src="../Img/Camisetas/cami_2.png">
+            <p>Segunda camiseta del Leister City</p>
             <p>$59.990</p>
             <a href="Pago_ini_sesion.html">COMPRAR</a>
-            <br>
-            <a href="#" id="eliminarProducto" class="eliminar-producto">Eliminar producto</a>
         </div>
 
         <div class="product-item">
-            <img src="../Img/Guantes/guantes.png">
-            <p>Guantes de Protero azules</p>
+            <img src="../Img/Camisetas/cami 3.png">
+            <p>Camistea de futbol verde esmeralda</p>
             <p>$69.990</p>
             <a href="Pago_ini_sesion.html">COMPRAR</a>
-            <br>
-            <a href="#" id="eliminarProducto" class="eliminar-producto">Eliminar producto</a>
         </div>
 
         <div class="product-item">
-            <img src="../Img/Canilleras/canilleras.png">
-            <p>Canilleras negras marca Nike</p>
+            <img src="../Img/Camisetas/cami_4.png">
+            <p>Segunda camiseta de Alianza Lima</p>
             <p>$69.990</p>
             <a href="Pago_ini_sesion.html">COMPRAR</a>
-            <br>
-            <a href="#" id="eliminarProducto" class="eliminar-producto">Eliminar producto</a>
         </div>
-    </div>
 </body>
-<script>
-    const eliminarProducto = document.getElementById("eliminarProducto");
-
-    eliminarProducto.addEventListener("click", (e) => {
-        e.preventDefault();
-
-        swal({
-            title: "Producto eliminado",
-            text: "El producto ya fue borrado",
-            icon: "success",
-            button: "OK",
-        }).then(() => {
-            window.location.href = "cami_borrada.html";
-        });
-    });
-</script>
-
 
 </html>
