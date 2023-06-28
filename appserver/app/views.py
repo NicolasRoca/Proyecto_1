@@ -16,3 +16,6 @@ def camisetas(request):
 
 def chuteadores(request):
     return render(request, 'app/chuteadores.html')
+
+def guantes(request):
+    return render(request, 'app/guantes.html')
