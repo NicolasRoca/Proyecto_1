@@ -2,12 +2,15 @@
 
 {%load static%}
 
+{%block js%}
+{%endblock%}
+
 {%block contenido%}
             <div class="product-item">
                 <img src="{%static 'app/Img/Camisetas/camiPSG.png'%}">
                 <p>Camiseta del PSG</p>
                 <p>$39.990</p>
-                <a href="pago.html">COMPRAR</a>
+                <a href="{%url 'carrito'%}">COMPRAR</a>
             </div>
 
             <div class="product-item">

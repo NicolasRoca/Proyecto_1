@@ -5,8 +5,14 @@ from django.shortcuts import render
 def home(request):
     return render(request, 'app/home.html')
 
-def contacto(request):
-    return render(request, 'app/contacto.html')
+def comprar(request):
+    return render(request, 'app/comprar.html')
 
-def galeria(request):
-    return render(request, 'app/galeria.html')
+def carrito(request):
+    return render(request, 'app/carrito.html')
+
+def camisetas(request):
+    return render(request, 'app/camisetas.html')
+
+def chuteadores(request):
+    return render(request, 'app/chuteadores.html')

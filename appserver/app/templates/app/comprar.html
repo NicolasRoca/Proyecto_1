@@ -1,0 +1,56 @@
+{% extends 'app/base.html' %}
+
+{%load static%}
+
+{%block css%}
+<link rel="stylesheet" href="{%static 'app/Diseño/pago.css'%}">
+{%endblock%}
+
+{%block js%}
+<script src="../Js/bootstrap.bundle.min.js"></script>
+<script src="../Js/validar_pago.js"></script>
+{%endblock%}
+
+{%block contenido%}
+
+<div class="mainscreen">
+    <!-- <img src="https://image.freepik.com/free-vector/purple-background-with-neon-frame_52683-34124.jpg"  class="bgimg " alt="">-->
+    <div class="card">
+        <div class="leftside">
+            <img src="{%static 'app/Img/Img_compra/img_compra.PNG'%}" class="product" alt="Shoes" />
+        </div>
+        <div class="rightside">
+            <form id="compra">
+                <h1>Verificar</h1>
+                <h2>Información del pago</h2>
+                <p>Nombre del titular de la tarjeta</p>
+                <input type="text" id="nom_tarjeta" class="inputbox" name="name" required />
+                <p>Número de tarjeta</p>
+                <small id="help_num_tarjeta" class="form-text text-danger"></small>
+                <input type="number" class="inputbox" name="card_number" id="card_number" required />
+
+                <p>Tipo de tarjeta</p>
+                <select class="inputbox" name="card_type" id="card_type" required>
+                    <option value="">--Seleccione un tipo de tarjeta--</option>
+                    <option value="Visa">Visa</option>
+                    <option value="RuPay">RuPay</option>
+                    <option value="MasterCard">MasterCard</option>
+                </select>
+
+                <div class="expcvv">
+                    <p class="expcvv_text">Expiración</p>
+                    <input type="date" class="inputbox" name="exp_date" id="exp_date" required />
+
+                    <p class="expcvv_text2">CVV</p>
+                    <input type="password" class="inputbox" name="cvv" id="cvv" required />
+                </div>
+                <p></p>
+
+                <button class="compra" type="submit">Comprar</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
