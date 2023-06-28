@@ -19,3 +19,6 @@ def chuteadores(request):
 
 def guantes(request):
     return render(request, 'app/guantes.html')
+
+def canilleras(request):
+    return render(request, 'app/canilleras.html')
