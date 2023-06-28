@@ -1,9 +1,15 @@
+from math import prod
 from django.shortcuts import render
+from .models import producto
 
 # Create your views here.
 
 def home(request):
-    return render(request, 'app/home.html')
+    Productos=producto.objects.all()
+    data={
+        'productos':Productos
+    }
+    return render(request, 'app/home.html', data)
 
 def comprar(request):
     return render(request, 'app/comprar.html')

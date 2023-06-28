@@ -6,31 +6,17 @@
 {%endblock%}
 
 {%block contenido%}
-            <div class="product-item">
-                <img src="{%static 'app/Img/Camisetas/camiPSG.png'%}">
-                <p>Camiseta del PSG</p>
-                <p>$39.990</p>
-                <a href="{%url 'carrito'%}">COMPRAR</a>
-            </div>
+    {%load humanize%}
+    {%for p in productos%}
 
-            <div class="product-item">
-                <img src="{%static 'app/Img/Chuteadores/chuteadores.png'%}">
-                <p>Chuteadores Adidas Predator</p>
-                <p>$59.990</p>
-                <a href="pago.html">COMPRAR</a>
-            </div>
+        <div class="product-item">
+            {%if p.imagen%}
+                <img src="{{p.imagen.url}}" alt="imagen producto">
+            {%endif%}
+            <p>{{p.descripcion}}</p>
+            <p>${{p.precio | intcomma}}</p>
+            <a href="{%url 'carrito'%}">COMPRAR</a>
+        </div>
 
-            <div class="product-item">
-                <img src="{%static 'app/Img/Guantes/guantes.png' %}">
-                <p>Guantes de Protero azules</p>
-                <p>$69.990</p>
-                <a href="pago.html">COMPRAR</a>
-            </div>
-
-            <div class="product-item">
-                <img src="{%static 'app/Img/Canilleras/canilleras.png' %}">
-                <p>Canilleras negras marca Nike</p>
-                <p>$69.990</p>
-                <a href="pago.html">COMPRAR</a>
-            </div>
+    {%endfor%}
 {%endblock%}
