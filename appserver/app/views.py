@@ -1,6 +1,8 @@
 from math import prod
+from tokenize import Pointfloat
 from django.shortcuts import render
 from .models import producto
+from .forms import ProductoForm
 
 # Create your views here.
 
@@ -28,3 +30,18 @@ def guantes(request):
 
 def canilleras(request):
     return render(request, 'app/canilleras.html')
+
+def agregar_producto(request):
+    data={
+        'form': ProductoForm()
+    }
+    
+    if request.method=='POST':
+        formulario=ProductoForm(data=request.POST, files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            data["mensaje"]="Guardado correctamente"
+        else:
+            data["form"]=formulario
+    
+    return render(request, 'app/producto/agregar.html', data)
