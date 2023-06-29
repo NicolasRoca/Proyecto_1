@@ -1,5 +1,7 @@
 from django.urls import path
-from .views import home, comprar, carrito, camisetas, chuteadores, guantes, canilleras, agregar_producto, listar_productos, modificar_producto
+from .views import home, comprar, carrito, camisetas, chuteadores 
+from .views import guantes, canilleras, agregar_producto
+from .views import listar_productos, modificar_producto
 
 urlpatterns=[
     path('', home, name="home"),

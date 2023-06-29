@@ -1,6 +1,6 @@
 from math import prod
 from tokenize import Pointfloat
-from django.shortcuts import render, redirect, get_list_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import producto
 from .forms import ProductoForm
 
@@ -55,9 +55,16 @@ def listar_productos(request):
     return render(request, 'app/producto/listar.html', data)
 
 def modificar_producto(request, id):
-    producto=get_list_or_404(producto, id=id)
+    productos=get_object_or_404(producto, id=id)
     data={
-        'form': ProductoForm(instance=producto)
+        'form': ProductoForm(instance=productos)
     }
+    
+    if request.method=='POST':
+        formulario=ProductoForm(data=request.POST, instance=productos, files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            return redirect(to="listar_productos")
+        data["form"]=formulario
     
     return render(request, 'app/producto/modificar.html', data)
