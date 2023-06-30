@@ -3,6 +3,7 @@ from tokenize import Pointfloat
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import producto
 from .forms import ProductoForm
+from django.contrib import messages
 
 # Create your views here.
 
@@ -64,6 +65,7 @@ def modificar_producto(request, id):
         formulario=ProductoForm(data=request.POST, instance=productos, files=request.FILES)
         if formulario.is_valid():
             formulario.save()
+            messages.success(request, "Modificado correctamente")
             return redirect(to="listar_productos")
         data["form"]=formulario
     
@@ -72,4 +74,5 @@ def modificar_producto(request, id):
 def eliminar_producto(request, id):
     productoeli=get_object_or_404(producto, id=id)
     productoeli.delete()
+    messages.success(request, "Eliminado correctamente")
     return redirect(to="listar_productos")
