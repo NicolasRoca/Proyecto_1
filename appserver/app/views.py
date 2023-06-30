@@ -68,3 +68,8 @@ def modificar_producto(request, id):
         data["form"]=formulario
     
     return render(request, 'app/producto/modificar.html', data)
+
+def eliminar_producto(request, id):
+    productoeli=get_object_or_404(producto, id=id)
+    productoeli.delete()
+    return redirect(to="listar_productos")
