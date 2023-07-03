@@ -87,3 +87,4 @@ def eliminar_producto(request, id):
     productoeli.delete()
     messages.success(request, "Eliminado correctamente")
     return redirect(to="listar_productos")
+
