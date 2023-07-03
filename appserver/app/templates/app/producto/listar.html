@@ -45,9 +45,13 @@
                 <td>${{p.precio | intcomma}}</td>
                 <td>{{p.tipo | title}}</td>
                 <td>
+                    {%if perms.app.change_producto%}
                     <a href="{%url 'modificar_producto' p.id%}" class="btn btn-info btn-sm">Modificar</a>
-                    <a href="#" onclick="eliminar_producto({{p.id}})" class="btn btn-danger btn-sm">Eliminar</a>
+                    {%endif%}
 
+                    {%if perms.app.delete_producto%}
+                    <a href="#" onclick="eliminar_producto({{p.id}})" class="btn btn-danger btn-sm">Eliminar</a>
+                    {%endif%}
                 </td>
             </tr>
             {%endfor%}
