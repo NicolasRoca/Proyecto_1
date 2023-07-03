@@ -17,6 +17,16 @@ from .serializers import ProductoSerializer
 class ProductoViewset(viewsets.ModelViewSet):
     queryset=producto.objects.all()
     serializer_class=ProductoSerializer
+    
+    def get_queryset(self):
+        productos=producto.objects.all()
+        
+        tipo=self.request.GET.get('tipo')
+        
+        if tipo:
+            productos=productos.filter(tipo__contains=tipo)
+        return productos
+    
 
 def home(request):
     Productos=producto.objects.all()
