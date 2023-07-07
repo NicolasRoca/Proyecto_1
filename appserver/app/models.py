@@ -9,4 +9,4 @@ class producto(models.Model):
     imagen=models.ImageField(upload_to="productos", null=True)
     
     def _str_(self):
-        return self.descripcion
+        return f'{self.descripcion} -> {self.precio}'

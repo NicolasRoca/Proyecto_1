@@ -1,0 +1,43 @@
+{%extends 'app/base.html'%}
+
+{%load static%}
+
+{%block js%}
+{%endblock%}
+
+{%block contenido%}
+{%load humanize%}
+{%for p in productos%}
+<div class="container">
+    <div class="row">
+        <div class="col-8">
+            <div class="row" style="padding: 10px 0;">
+                <div class="col-12">
+                    <div class="row">
+                        {%for producto in productos%}
+                        <div class="col-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="product-item">
+                                        {%if p.imagen%}
+                                            <img src="{{p.imagen.url}}" alt="imagen producto">
+                                        {%endif%}
+                                        <p>{{p.descripcion}}</p>
+                                        <p>${{p.precio | intcomma}}</p>
+                                        <a href="{%url 'agregar_producto_carrito' producto.id%}">Agregar al carrito</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {%endfor%}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            {%include "app/carrito.html"%}
+        </div>
+    </div>
+</div>
+{%endfor%}
+{%endblock%}

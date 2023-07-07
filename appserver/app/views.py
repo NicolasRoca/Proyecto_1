@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from math import prod
 from tokenize import Pointfloat
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404, HttpResponse
 from .models import producto
 from .forms import ProductoForm, CustomUserCreationForm
 from django.contrib import messages
@@ -11,6 +11,7 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required, permission_required
 from rest_framework import viewsets
 from .serializers import ProductoSerializer
+from .Carrito import Carrito
 
 # Create your views here.
 
@@ -129,3 +130,31 @@ def registro(request):
     
     return render(request, 'registration/registro.html', data)
 
+def tienda(request):
+    productos=producto.objects.all()
+    
+    return render(request, "app/tienda.html", {'productos':productos})
+
+def agregar_producto_carrito(request, producto_id):
+    carrito=Carrito(request)
+    Producto=producto.objects.get(id=producto_id)
+    carrito.agregar(Producto)
+    return redirect("tienda")
+
+def eliminar_producto_carrito(request, producto_id):
+    carrito=Carrito(request)
+    Producto=producto.objects.get(id=producto_id)
+    carrito.eliminar(Producto)
+    return redirect("tienda")
+
+def restar_producto_carrito(request, producto_id):
+    carrito=Carrito(request)
+    Producto=producto.objects.get(id=producto_id)
+    carrito.restar(Producto)
+    return redirect("tienda")
+
+
+def limpiar_carrito(request):
+    carrito=Carrito(request)
+    carrito.limpiar()
+    return redirect("tienda")
