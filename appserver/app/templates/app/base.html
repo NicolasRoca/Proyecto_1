@@ -17,8 +17,6 @@
     <div id="titulo">
         <h4>ENVIOS GRATIS A TODOS LADOS</h4>
         <div id="inse">
-            <a href="login.html">Iniciar Sesion</a>
-            <br>
             {%if perms.app.add_producto%}
             <a href="{%url 'agregar_producto'%}">Agregar producto</a>
             {%endif%}
